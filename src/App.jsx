@@ -1,16 +1,19 @@
-import Carrousel from "./components/Carrousel"
+import Carousel from "./components/Carousel"
 import Header from "./layout/Header"
+
 // import './index.css'
 
 function App() {
 
   return (
     <>
- <Header/>
+      <Header />
+      
+      
 
       <div className='relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12 m-10'>
 
-     
+
 
 
         <div className="bg-gray-100 flex flex-row mx-20 items-center justify-center">
@@ -27,17 +30,10 @@ function App() {
 
             </div>
           </div>
-       <Carrousel/>
+          <div className="max-w-2xl mx-auto min-h-screen flex items-center justify-center ">
 
-
-
-
-
-
-
-
-
-
+          <Carousel />
+          </div>
 
 
 
