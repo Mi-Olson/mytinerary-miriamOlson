@@ -28,70 +28,71 @@ export default function Carousel() {
   return (
     <>
 
-      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active" >
-          <div className="flex  flex-wrap justify-center mt-1">
+      <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner ">
           
-                {data.slice(0, 4).map((each, index) => (
-                  <CardCity
-                    key={index}
-                    photo={each.photo}
-                    alt={each.id}
-                    text={each.city}
-                  />
-                ))}
-              </div>
-           
-          </div>
-          <div class="carousel-item">
+          <div className="carousel-item active container" >
+            <div className="flex  flex-wrap justify-center mt-1">
 
-          <div className="flex  flex-wrap justify-center mt-1">
-          
-          {data.slice(4, 8).map((each, index) => (
-            <CardCity
-              key={index}
-              photo={each.photo}
-              alt={each.id}
-              text={each.city}
-            />
-          ))}
-        </div>
+              {data.slice(0, 4).map((each, index) => (
+                <CardCity
+                  key={index}
+                  photo={each.photo}
+                  alt={each.id}
+                  text={each.city}
+                />
+              ))}
+            </div>
+
           </div>
-          <div class="carousel-item">
-          <div className="flex  flex-wrap justify-center mt-1">
-          
-          {data.slice(8, 12).map((each, index) => (
-            <CardCity
-              key={index}
-              photo={each.photo}
-              alt={each.id}
-              text={each.city}
-            />
-          ))}
-        </div>
+          <div className="carousel-item">
+
+            <div className="flex  flex-wrap justify-center mt-1">
+
+              {data.slice(4, 8).map((each, index) => (
+                <CardCity
+                  key={index}
+                  photo={each.photo}
+                  alt={each.id}
+                  text={each.city}
+                />
+              ))}
+            </div>
           </div>
-          <div class="carousel-item">
-          <div className="flex  flex-wrap justify-center mt-1">
-          
-          {data.slice(12, 16).map((each, index) => (
-            <CardCity
-              key={index}
-              photo={each.photo}
-              alt={each.id}
-              text={each.city}
-            />
-          ))}
-        </div>
+          <div className="carousel-item">
+            <div className="flex  flex-wrap justify-center mt-1">
+
+              {data.slice(8, 12).map((each, index) => (
+                <CardCity
+                  key={index}
+                  photo={each.photo}
+                  alt={each.id}
+                  text={each.city}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="carousel-item">
+            <div className="flex  flex-wrap flex-sm-column flex-md-row  flex-lg-row justify-center mt-1">
+
+              {data.slice(12, 16).map((each, index) => (
+                <CardCity
+                  key={index}
+                  photo={each.photo}
+                  alt={each.id}
+                  text={each.city}
+                />
+              ))}
+            </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
         </button>
       </div>
 
