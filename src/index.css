@@ -4,7 +4,7 @@
 /* @import "~bootstrap/scss/bootstrap"; */
 
 :root {
-    --purple:#8b5cf6;
+    --purple: #8b5cf6;
 }
 
 .custom-element {
@@ -26,11 +26,9 @@
     --bs-btn-border-radius: .5rem;
     --bs-btn-hover-color: var(--bs-white);
     --bs-btn-hover-bg: var(--purple);
-   
+
     --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
     --bs-btn-active-color: var(--bs-btn-hover-color);
-   
+
 
 }
-
-
