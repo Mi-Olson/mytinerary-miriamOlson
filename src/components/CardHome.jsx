@@ -1,25 +1,23 @@
 import React from 'react'
-
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 export default function CardHome() {
     return (
         <>
-
-           
-
-
-            <div className="max-w-2xl mx-auto  flex items-center justify-center ">
-                <div className="max-w-md w-full p-6 rounded-lg shadow-lg">
-
-                    <h1 className="text-2xl font-semibold text-center text-gray-500 mt-8 mb-6">Find the perfect destination</h1>
-                    <p className="text-sm text-gray-600 text-justify mt-8 mb-6">Al unirte a nuestro programa de fidelización y tokenización de puntos, conseguirás obtener puntos con cada compra y canjearlos por descuentos exclusivos, regalos especiales o convertirlos en criptomonedas.</p>
-                    <div className="flex justify-right space-x-4 my-4">
-                        <button className="bg-violet-600 text-white px-4 py-2 rounded-md w-1/2">View More</button>
-
+            {/* <Card  className="container  " > */}
+           <div className=' flex text-dark   items-center  '>
+            {/* <div className="card text-bg-dark col-sm-12 col-md-6 col-lg-3 items-center p-2 "> */}
+                <div className='flex flex-column p-3 justify-center'>
+                    <div className='fs-4 card-title fw-bold '>Find the perfect destination</div>
+                    <div className='card-title flex flex-wrap '>
+                        Our app will help you find the perfect path for your next trip. With an easy-to-use interface and a host of itinerary options, planning your next trip has never been easier.
                     </div>
 
 
+
+                    <Button className=" btn btn-bd-primary col-sm-12 col-md-6 col-lg-6 " variant="flat" >View More</Button>
                 </div>
-            </div>
-        </>
+    </div> 
+            </>
     )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import CardCity from './CardCity'
 export default function Carousel() {
   var data = [
-    { id: 'america1', city: "Cancun", photo: "/img/america/newyork.jpg" },
+    { id: 'america1', city: "Cancun", photo: "/img/america/cancun.jpg" },
     { id: 'america2', city: "New York", photo: "/img/america/newyork.jpg" },
     { id: 'america3', city: "Rio de Janeiro", photo: "/img/america/rioDeJaneiro.jpg" },
     { id: 'america4', city: "Ushuaia", photo: "/img/america/ushuaia.jpg" },
@@ -28,7 +28,7 @@ export default function Carousel() {
   return (
     <>
 
-      <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+      <div id="carouselExampleAutoplaying" className="carousel slide bg-gray-400 rounded" data-bs-ride="carousel">
         <div className="carousel-inner ">
           
           <div className="carousel-item active container" >

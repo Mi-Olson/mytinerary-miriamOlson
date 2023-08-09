@@ -3,12 +3,12 @@ import React from 'react'
 export default function Header2() {
     return (
         <>
-            <header>
-                <div class="text-dark fs-3 fw-bold d-flex justify-content-between p-4 ms-8">
+            <header className='bg-gray-200'>
+                <div class="text-dark fs-3 fw-bold d-flex justify-content-between p-2 mx-1 my-6">
                     <div class="nav-item">
-                        <button className="text-dark " type="button">MyTinary </button>
+                        <button className="text-dark ms-sm-20 " type="button">MyTinary </button>
                     </div>
-                    <div className='d-flex gap-4 me-8'>
+                    <div className='d-flex gap-4 me-sm-8 me-md-18'>
 
                         <button className="text-dark fs-4 text-center" type='button' >Home</button>
 
