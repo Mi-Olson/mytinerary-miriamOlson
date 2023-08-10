@@ -1,39 +1,37 @@
-import React from 'react'
+import React, { Fragment, useState } from 'react'
+import { useEffect } from 'react'
 
-export default function NavBar() {
-    let [show,setShow] = React.useState(false)
+import { NavLink  } from 'react-router-dom'
+
+
+export default function NavBar({ links,directRow }) {
+  
+
+
+
   return (
-    <header className="h-[87px] px-10 bg-red-200 flex justify-start items-center">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      className="w-[50px] h-[50px] bg-white p-[5px] rounded-xl cursor-pointer"
-      onClick={()=>setShow(!show)}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-      />
-    </svg>
-    {show ? (
-      <div className="flex ms-5 absolute top-[70px] left-[70px] gap-2 flex flex-col bg-pink-400 p-2 rounded-xl">
-      <p className="h-[50px] text-[20px] px-2 bg-white rounded-xl w-[100px] flex justify-center items-center mx-1">
-        Home
-      </p>
-      <p className="h-[50px] text-[20px] px-2 bg-white rounded-xl w-[100px] flex justify-center items-center mx-1">
-        Sign In
-      </p>
-      <p className="h-[50px] text-[20px] px-2 bg-white rounded-xl w-[100px] flex justify-center items-center mx-1">
-        Sign Up
-      </p>
-    </div>
-    ) : (null)}
+
+
+    <>
+       {directRow ?
+       <div className="hidden md:flex  gap-2 ">
+      {links.map((each,key)=> 
+         <NavLink key={key} to={each.value} className={({isActive,isPending})=> isPending ?  "border border-secondary text-dark fs-4 text-center p-1  bg-red rounded-xl  max-h-20 " : isActive ? "text-white w-200 fs-4 text-center p-1 bg-secondary  rounded-xl max-h-15" : ""}   >{each.content}</NavLink>
+         )}
+      
+      </div> :
+      <div className='d-flex gap-2 mt-2 sm-block d-md-none d-lg-none flex-column '>
+      {links.map((each,key)=> 
+         <NavLink key={key} to={each.value} className={({isActive,isPending})=> isPending ? "border border-secondary text-dark fs-4 p-1 text-center sm-block d-md-none d-lg-none rounded-xl max-h-10" : isActive ? "text-white p-1 bg-secondary fs-4 text-center sm-block d-md-none d-lg-none rounded-xl max-h-10" : ""}   >{each.content}</NavLink>
+         )}
+         </div>
+        
+
     
-  </header>
+
+      }
+      </>
+ 
   )
 }
 
