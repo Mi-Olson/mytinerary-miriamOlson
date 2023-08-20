@@ -2,7 +2,7 @@ import React from 'react'
 import Carousel from '../components/Carousel'
 import { useState, useEffect } from "react";
 import CardHome from '../components/CardHome'
-
+import apiUrl from '../services/apiUrl'
 import axios from "axios";
 
 
@@ -12,9 +12,9 @@ export default function Home() {
     const [data, setData] = useState([])
     useEffect(
         () => {
-            axios('/data.json')
-                .then(res => setData(res.data))
-                .catch(err => console.log(err))
+            axios(apiUrl+'cities/carousel')
+                 .then(res => setData(res.data.data_carousel))
+                .catch(err => console.log(err))    
         },        //callback que NO debe retornar nada y NO puede ser asincrona
         []        //array de dependencias
         //cuando está vacío EL EFECTO se ejecuta UNA UNICA VEZ cuando se monta el componente
@@ -28,11 +28,11 @@ export default function Home() {
 
         <div className="container text-center min-vh-75 justify-content-center align-self-center "  >
             <div className='row'>
-                <div className='col-sm-12 col-md-4 col-lg-4 min-h-200'>
+                <div className='col-sm-12 col-md-3 col-lg-3 '>
                     <CardHome />
                 </div>
 
-                <div className="col-sm-12 col-md-8 col-lg-8 flex items-center ">
+                <div className="col-sm-12 col-md-9 col-lg-9 flex items-center ">
                     <Carousel data={data} />
                 </div>
             </div>

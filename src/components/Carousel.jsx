@@ -3,30 +3,30 @@ import { useState} from "react";
 import CardCity from './CardCity'
 export default function Carousel({data}) {
   
-  let [counter,setCounter] = useState(0)
-  let [counterTo,setCounterTo] = useState(4)
-  function next_slide() {
-    if (data.length <= counterTo) {
-      setCounter(0)
-      setCounterTo(4)
-    } else {
-      setCounter(counter+4)
-      setCounterTo(counterTo+4)
-    }
-    console.log(counter);
-    console.log(counterTo);
-  }
-  function prev_slide() {
-    if (counter <= 0) {
-      setCounter(data.length-4)
-      setCounterTo(data.length)
-    } else {
-      setCounter(counter-4)
-      setCounterTo(counterTo-4)
-    }
-    console.log(counter);
-    console.log(counterTo);
-  }
+  // let [counter,setCounter] = useState(0)
+  // let [counterTo,setCounterTo] = useState(4)
+  // function next_slide() {
+  //   if (data.length <= counterTo) {
+  //     setCounter(0)
+  //     setCounterTo(4)
+  //   } else {
+  //     setCounter(counter+4)
+  //     setCounterTo(counterTo+4)
+  //   }
+  //   console.log(counter);
+  //   console.log(counterTo);
+  // }
+  // function prev_slide() {
+  //   if (counter <= 0) {
+  //     setCounter(data.length-4)
+  //     setCounterTo(data.length)
+  //   } else {
+  //     setCounter(counter-4)
+  //     setCounterTo(counterTo-4)
+  //   }
+  //   console.log(counter);
+  //   console.log(counterTo);
+  // }
 
 
 
@@ -36,7 +36,7 @@ export default function Carousel({data}) {
   return (
     <>
 
-      <div id="carouselExampleAutoplaying" className="carousel slide bg-gray-400 rounded" data-bs-ride="carousel">
+      <div id="carouselExampleAutoplaying " className="carousel slide bg-gray-400 rounded" data-bs-ride="carousel">
         <div className="carousel-inner ">
           
           <div className="carousel-item active container" >
@@ -80,7 +80,7 @@ export default function Carousel({data}) {
               ))}
             </div>
           </div>
-          <div className="carousel-item">
+          {/* <div className="carousel-item">
             <div className="flex  flex-wrap flex-sm-column flex-md-row  flex-lg-row justify-center mt-1">
 
               {data.slice(12, 16).map((each, index) => (
@@ -92,7 +92,7 @@ export default function Carousel({data}) {
                 />
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
