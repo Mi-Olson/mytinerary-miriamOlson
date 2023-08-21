@@ -10,10 +10,10 @@ export default function Header2() {
     return (
         <>
             <header className='bg-gray-200'>
-                <div class="text-dark fs-3 fw-bold d-flex justify-content-between p-2 mx-1 my-6 ">
+                <div className="text-dark fs-3 fw-bold d-flex justify-content-between p-2 mx-1 my-6 ">
 
 
-                    <div class="nav-item gap-2 flex flex-row">
+                    <div className="nav-item gap-2 flex flex-row">
                         <div className='flex flex-column sm-block d-md-none d-lg-none'>
                             <div className='sm-block d-md-none d-lg-none'>
                                 <svg
@@ -34,19 +34,17 @@ export default function Header2() {
                             </div>
                             {show ? <NavBar links={links} directRow={false} /> : null}
                         </div>
-                        <div>
-                            <button className="text-dark ms-sm-20 " type="button">MyTinerary </button>
+
+                        <div className='ms-sm-5 ms-md-5  ms-lg-5 ms-xl-5'>
+                        <img src="../../img/logo.png" width="150" height="50"  class="img-responsive" alt="titulo" />
+                            {/* <button className="h-[50px] w-[110px] text-dark ms-sm-20 " type="button">MyTinerary </button> */}
                         </div>
                     </div>
 
                     <div className='d-flex gap-4 me-sm-8 me-md-18'>
+                   
                         <NavBar links={links} directRow={true} />
-
-                        <button className="text-center  fs-4 btn d-flex align-items-center max-h-10 rounded-xl" style={{ width: "120px", background: "#7c3aed", color: "white" }} ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                        </svg>Login</button>
-
-
+                      
                     </div>
                 </div>
 
