@@ -7,7 +7,7 @@ export default function Footer() {
                 <div class=" embed-responsive embed-responsive-1by1  flex flex-row gap-1">
 
 
-                    <img src="../img/logomi.jpg" width="50" height="50" class="img-responsive" alt="titulo" />
+                    <img src="../img/logomi.jpg" width="50" height="50" className="rounded-circle img-responsive" alt="titulo" />
                     <img src="../img/logo.png" width="150" height="50"  class="img-responsive" alt="titulo" />
 
                 </div>
