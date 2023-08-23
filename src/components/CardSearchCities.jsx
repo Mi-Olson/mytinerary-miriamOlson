@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link as Anchor } from 'react-router-dom'
 const CardSearchCities = ({text, alt,photo}) => {
-    const [viewMore,setViewMore]=useState(false)
+    // const [viewMore,setViewMore]=useState(false)
   return (
     <div className="mx-auto my-2 p-2 card text-bg-dark col-sm-12 col-md-5 col-lg-5 ">
       <img src={photo} className="card-img" alt={alt} />

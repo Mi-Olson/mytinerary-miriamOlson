@@ -3,33 +3,7 @@ import { useState} from "react";
 import CardCity from './CardCity'
 export default function Carousel({data}) {
   
-  // let [counter,setCounter] = useState(0)
-  // let [counterTo,setCounterTo] = useState(4)
-  // function next_slide() {
-  //   if (data.length <= counterTo) {
-  //     setCounter(0)
-  //     setCounterTo(4)
-  //   } else {
-  //     setCounter(counter+4)
-  //     setCounterTo(counterTo+4)
-  //   }
-  //   console.log(counter);
-  //   console.log(counterTo);
-  // }
-  // function prev_slide() {
-  //   if (counter <= 0) {
-  //     setCounter(data.length-4)
-  //     setCounterTo(data.length)
-  //   } else {
-  //     setCounter(counter-4)
-  //     setCounterTo(counterTo-4)
-  //   }
-  //   console.log(counter);
-  //   console.log(counterTo);
-  // }
-
-
-
+ 
 
 
 
@@ -46,7 +20,7 @@ export default function Carousel({data}) {
                 <CardCity
                   key={index}
                   photo={each.photo}
-                  alt={each.id}
+                  alt={each._id}
                   text={each.city}
                 />
               ))}
@@ -61,7 +35,7 @@ export default function Carousel({data}) {
                 <CardCity
                   key={index}
                   photo={each.photo}
-                  alt={each.id}
+                  alt={each._id}
                   text={each.city}
                 />
               ))}
@@ -74,7 +48,7 @@ export default function Carousel({data}) {
                 <CardCity
                   key={index}
                   photo={each.photo}
-                  alt={each.id}
+                  alt={each._id}
                   text={each.city}
                 />
               ))}

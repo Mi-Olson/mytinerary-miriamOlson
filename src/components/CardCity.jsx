@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link as Anchor} from 'react-router-dom'
-import LinkA from './LinkA'
+
 export default function CardCity({text, alt,photo}) {
+const [id,setId]=useState("")
+
+console.log(alt)
+
+function funcion(alt) {
+  setId(alt)
+  // console.log(alt);
+
+}
+
+useEffect(() => {
 
 
+  funcion(alt)
+
+
+}, [])
   return (
     
     <div className="card text-bg-dark col-sm-12 col-md-8 col-lg-4  m-2  ">
@@ -12,11 +27,10 @@ export default function CardCity({text, alt,photo}) {
         <h3 className="card-title text-start fw-bold">{text}</h3>
         <button class=" embed-responsive embed-responsive-1by1  gap-1">
 
-                    {/* <Anchor  to={'/cities'} className="h-[50px] text-[20px] px-2 bg-white rounded-xl w-[100px] flex justify-center items-center mx-1" >More</Anchor> */}
-                    <img src="../img/logomi.jpg" width="50" height="50" className="rounded-circle img-responsive" alt="titulo" />
-                    {/* <img src="../img/logo.png" width="150" height="50"  class="img-responsive" alt="titulo" /> */}
-
+                   
                 </button>
+                <Anchor  to={'/cityDetail/'+id} className="btn rounded-xl  col-sm-4 col-md-4 col-lg-4 bg-slate-400 opacity-75 flex justify-center items-center mx-1" >View More</Anchor>
+                {/* <Anchor to={'/cities'} className="h-[50px] fs-4 fw-bold rounded-xl w-1/4 border border-secondary bg-slate-800 text-white  text-center p-2" >Back</Anchor> */}
         
       </div>
     </div>

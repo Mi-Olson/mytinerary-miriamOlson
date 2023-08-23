@@ -50,7 +50,7 @@ export default function CityDetail() {
             <p className=" h-[50px] fs-4 fw-bold rounded-xl w-1/4 border border-secondary text-dark  text-center p-1 " >{city.city}</p>
           </div>
         <div>
-          <Anchor to={'/cities'} className="h-[50px] fs-4 fw-bold rounded-xl w-1/4 border border-secondary bg-slate-800 text-white  text-center p-2" >Back</Anchor>
+          <Anchor to={'/cities'} className="h-[50px] fs-4 fw-bold rounded-xl w-1/4 border border-secondary bg-slate-800 opacity-75 text-white  text-center p-2" >Back</Anchor>
           </div>
         </div>
        
