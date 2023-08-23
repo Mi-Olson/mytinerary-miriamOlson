@@ -29,7 +29,7 @@ useEffect(() => {
 
                    
                 </button>
-                <Anchor  to={'/cityDetail/'+id} className="btn rounded-xl  col-sm-4 col-md-4 col-lg-4 bg-slate-400 opacity-75 flex justify-center items-center mx-1" >View More</Anchor>
+                <Anchor  to={'/cityDetail/'+id} className="btn-flat rounded-xl w-2/5 col-sm-4 col-md-4 col-lg-4  flex justify-center items-center mx-1" >View More</Anchor>
                 {/* <Anchor to={'/cities'} className="h-[50px] fs-4 fw-bold rounded-xl w-1/4 border border-secondary bg-slate-800 text-white  text-center p-2" >Back</Anchor> */}
         
       </div>
