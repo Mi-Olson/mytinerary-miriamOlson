@@ -8,7 +8,7 @@ import axios from "axios";
 
 export default function Home() {
 
-    const [show, setShow] = useState(true)
+
     const [data, setData] = useState([])
     useEffect(
         () => {
