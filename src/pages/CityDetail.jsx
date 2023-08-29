@@ -4,34 +4,20 @@ import axios from 'axios'
 import apiUrl from '../services/apiUrl'
 import { Link as Anchor } from 'react-router-dom'
 
+import { useDispatch,useSelector } from 'react-redux'
+import city_actions from '../store/actions/cities'
+const { read_city } = city_actions
+
 export default function CityDetail() {
 
 
   const { id } = useParams()
-  // console.log(id);
-  const [city, setCity] = useState([])
-  function funcion(id) {
-    setCity(id)
-    console.log(id);
-  }
-
-
-
+  const dispatch = useDispatch()
+  const city = useSelector(store=> store.cities.city)
+ 
   useEffect(() => {
+    dispatch(read_city({ id:id }))
 
-
-    funcion(id)
-
-
-  }, [])
-  useEffect(() => {
-
-
-    axios(apiUrl + 'cities/' + id)
-
-
-      .then(res => setCity(res.data.response))
-      .catch(err => { console.log(err) })
   }, [])
 
   //este hook se engancha a la URL para evaluar todos los parametros dinamicos que tiene la URL

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import axios from "axios";
-import apiUrl from "../apiUrl";
+import apiUrl from "../services/apiUrl";
 import { Link as Anchor } from "react-router-dom";
 
 export default function Form() {
