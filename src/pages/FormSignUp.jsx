@@ -87,7 +87,7 @@ export default function Form() {
       />
       <input
         type="button"
-        className="bg-red-400 text-white w-4/5 py-4 text-center cursor-pointer"
+        className="bg-red-400 text-white w-4/5 py-4 text-center cursor-pointer btn-flat"
         value="Sign Up!"
         onClick={handleSignUp}
       />

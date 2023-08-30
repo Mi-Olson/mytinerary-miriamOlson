@@ -1,12 +1,16 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import axios from 'axios'
-import apiUrl from '../services/apiUrl'
+
 import { Link as Anchor } from 'react-router-dom'
+import Itineraries from './Itineraries'
+import Detail_of_city from '../components/Detail_of_city'
 
 import { useDispatch,useSelector } from 'react-redux'
 import city_actions from '../store/actions/cities'
+import itinerary_actions from '../store/actions/itineraries'
 const { read_city } = city_actions
+const {read_itineraries}=itinerary_actions
+
 
 export default function CityDetail() {
 
@@ -14,9 +18,12 @@ export default function CityDetail() {
   const { id } = useParams()
   const dispatch = useDispatch()
   const city = useSelector(store=> store.cities.city)
+  
  
   useEffect(() => {
+   
     dispatch(read_city({ id:id }))
+    dispatch(read_itineraries({_id:id} ))
 
   }, [])
 
@@ -40,8 +47,14 @@ export default function CityDetail() {
           </div>
         </div>
        
-        <div className=' card-title h6 text-black  w-200 h-15'>CityDetail of city under construction</div>
+        
+   
+
       </div>
+      <Detail_of_city/>
+      <Itineraries
+      
+      />
 
     </>
 

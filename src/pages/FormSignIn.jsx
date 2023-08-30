@@ -1,5 +1,6 @@
 import { useRef } from "react";
-import { Link as Anchor } from "react-router-dom";
+import { Link as Anchor, Navigate, useNavigate } from "react-router-dom";
+
 // import apiUrl from "../services/apiUrl";
 //import axios from "axios";
 
@@ -7,6 +8,7 @@ import { Link as Anchor } from "react-router-dom";
 export default function Form() {
   const mail_signin = useRef("");
   const password_signin = useRef("");
+  const navigate=useNavigate();
 
   async function handleSignIn() {
     let data = {
@@ -14,6 +16,7 @@ export default function Form() {
       password: password_signin.current.value,
     };
     console.log(data);
+    navigate('/home')
   }
   return (
     <form className="flex flex-col grow justify-evenly items-center w-4/5">
@@ -37,14 +40,14 @@ export default function Form() {
       />
       <input
         type="button"
-        className="bg-red-400 text-white w-4/5 py-4 text-center cursor-pointer"
+        className="btn-flat text-white w-4/5 py-4 text-center cursor-pointer"
         value="Sign In!"
         onClick={handleSignIn}
       />
       <p>
         Don't you have an account?{" "}
         <Anchor
-          className="text-[20px] font-bold text-red-800 cursor-pointer"
+          className="text-[20px] font-bold  cursor-pointer"
           to='/auth/signup'
         >
           Sign up
