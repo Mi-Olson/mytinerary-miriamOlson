@@ -32,6 +32,7 @@ export default function CityDetail() {
   //y donde cada VALOR es el valor de la URL
   return (
     <>
+  
       <div className='card '>
         <img className='img-fluid' src={city.photo} alt={city.text}></img>
 
@@ -51,10 +52,16 @@ export default function CityDetail() {
    
 
       </div>
+      <div className=' flex flex-column justify-content-center text-center'>
+      <p className='display-1  fw-bold '>
+      Features    </p>
       <Detail_of_city/>
-      <Itineraries
-      
+      <p className='display-1  fw-bold'>
+      Itineraries
+      </p>
+      <Itineraries    
       />
+      </div>
 
     </>
 
