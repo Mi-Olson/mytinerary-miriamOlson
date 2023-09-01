@@ -7,9 +7,8 @@ import Detail_of_city from '../components/Detail_of_city'
 
 import { useDispatch,useSelector } from 'react-redux'
 import city_actions from '../store/actions/cities'
-import itinerary_actions from '../store/actions/itineraries'
-import { ConfirmationNumber } from '@mui/icons-material'
 const { read_city } = city_actions
+import itinerary_actions from '../store/actions/itineraries'
 const {read_itineraries}=itinerary_actions
 import {useNavigate}  from 'react-router-dom'
 
