@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react'
 
 import { useEffect } from 'react'
+import NotFoundElement from '../components/NotFoundElement'
 
-import NotFound from '../components/NotFound'
 import CardSearchCities from '../components/CardSearchCities'
 
 import { useSelector,useDispatch } from 'react-redux'
@@ -22,6 +22,7 @@ const Cities = () => {
   useEffect(() => {
     setSearch(text.current.value)
     dispatch(read_cities({ text:text.current?.value }))
+    console.log(cities);
 
   }, [reEffec])
 
@@ -35,9 +36,10 @@ const Cities = () => {
       <div>
       <input placeholder='look for your next trip' className=' h-[50px]  rounded-xl w-[300px] border border-secondary text-dark fs-4 p-1 text-center ms-4 mt-4' ref={text} type="text" name="text" id="text" onKeyUp={handlerFilter} />
       </div>
+      
+      {((cities.length) >0)?(
       <div className='flex flex-wrap'>
-      {(cities)?(
-      cities.map((each, index) =>
+      {cities.map((each, index) =>
     
       <CardSearchCities
      
@@ -47,12 +49,19 @@ const Cities = () => {
           text={each.city}
           
           
-        />
+        />)}
+
+        </div>
        
-      )):(<NotFound search={search}/>)}
+     ):(
+        <div className='flex flex-row w-5/5 justify-content-center items-center'>
+        <NotFoundElement search={search} />
+        </div>
+        )}
+
       </div>
 
-</div>
+
     </>
   )
 

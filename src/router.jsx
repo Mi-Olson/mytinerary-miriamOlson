@@ -7,7 +7,7 @@ import CityDetail from "./pages/CityDetail";
 // import SignIn from "./pages/SignIn"
 import FormSignIn from "./pages/FormSignIn"
 import FormSignUp from "./pages/FormSignUp"
-import NotFound from "./components/NotFound";
+import NotFound from "./pages/NotFound";
 import NavLayout from "./layout/NavLayout";
 import Itineraries from "./pages/Itineraries";
 const router = createBrowserRouter([
