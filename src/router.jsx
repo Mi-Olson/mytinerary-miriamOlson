@@ -11,17 +11,7 @@ import NotFound from "./components/NotFound";
 import NavLayout from "./layout/NavLayout";
 import Itineraries from "./pages/Itineraries";
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <NavLayout />,
-        children: [
-            { path: "/", element:<FormSignIn/>},
-            { path: "/index", element:<FormSignIn/>},
-            { path: "/auth/signin", element: <FormSignIn /> },
-         
-        { path: "/auth/signup", element: <FormSignUp /> }
-    ]
-    },
+   
    
 
     {
@@ -29,7 +19,7 @@ const router = createBrowserRouter([
         element: <MainLayout />,
         children: [
             { path: '/', element: <Home /> },
-            // { path: "/index", element: <Home /> },
+            { path: "/index", element: <Home /> },
             { path: "/home", element: <Home /> },
             { path: "/cities", element: <Cities /> },
             { path: "/cityDetail/:id", element: <CityDetail /> },
@@ -43,7 +33,18 @@ const router = createBrowserRouter([
    
     {
         path: "/itineraries", element: <Itineraries />
-    }
+    },
+    {
+        path: "/",
+        element: <NavLayout />,
+        children: [
+            { path: "/", element:<FormSignIn/>},
+            // { path: "/index", element:<FormSignIn/>},
+            { path: "/auth/signin", element: <FormSignIn /> },
+         
+        { path: "/auth/signup", element: <FormSignUp /> }
+    ]
+    },
 
 
 

@@ -7,6 +7,10 @@ const Itineraries = () => {
   const [show_, setShow_] = useState(false)
 
   const itineraries = useSelector(store => store.itineraries.itineraries)
+  let all_price=0
+  
+   itineraries.forEach((each)=>(all_price+=parseInt(each.price)))
+  
   return (
     <>
       <div className='flex flex-wrap w-12/12 justify-content-center text-center'>
@@ -16,6 +20,7 @@ const Itineraries = () => {
 
           key={key}
           each={each}
+          all_price={all_price}
         />
       ))}
 

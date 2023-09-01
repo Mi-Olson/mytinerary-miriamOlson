@@ -8,16 +8,24 @@ import Detail_of_city from '../components/Detail_of_city'
 import { useDispatch,useSelector } from 'react-redux'
 import city_actions from '../store/actions/cities'
 import itinerary_actions from '../store/actions/itineraries'
+import { ConfirmationNumber } from '@mui/icons-material'
 const { read_city } = city_actions
 const {read_itineraries}=itinerary_actions
+import {useNavigate}  from 'react-router-dom'
 
 
 export default function CityDetail() {
 
-
+ 
   const { id } = useParams()
   const dispatch = useDispatch()
   const city = useSelector(store=> store.cities.city)
+  const [showItineraries,setShowItineraries]=useState(false)
+  const navigate=useNavigate()
+ const goCities = () => {
+  navigate('/cities')
+}
+  
   
  
   useEffect(() => {
@@ -33,35 +41,52 @@ export default function CityDetail() {
   return (
     <>
   
-      <div className='card '>
-        <img className='img-fluid' src={city.photo} alt={city.text}></img>
+      {/* <div className='card '> */}
+      <div className=" h-[100vh] bg-cover bg-center "  style={{
+      backgroundImage: `url(${city.photo})`,
+      // backgroundImage: `url(${externalImage})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+     
+    }}>
+        <img  id='top' src="../img/logomi.jpg" width="150" height="150" className=' w-20 h-20 rounded-circle position-absolute mt-1 mr-2' alt="titulo" />
 
 
-        <div class="card-img-overlay flex flex-col items-top justify-between  mb-10">
-          <div className='flex flex-row'>
-            <img src="../img/logomi.jpg" width="150" height="150" className=' w-20 h-20 rounded-circle' alt="titulo" />
-
-            <p className=" h-[50px] fs-4 fw-bold rounded-xl w-1/4 border border-secondary text-dark  text-center p-1 " >{city.city}</p>
+        <div class="flex flex-column justify-content-center  text-center items-center  mt-20">
+          <div className='flex  justify-content-center'>
+          
+            <p className=" fs-1 fw-bold rounded-xl w-8/12 text-white text-shadow  text-center p-1 " >{city.city}</p>
           </div>
-        <div>
-          <Anchor to={'/cities'} className="h-[50px] fs-4 fw-bold rounded-xl w-1/4 border border-secondary bg-slate-800 opacity-75 text-white  text-center p-2" >Back</Anchor>
-          </div>
+          <div className='flex  justify-content-center' >
+          
+          <p className=" fs-3 rounded-xl w-8/12  text-white bg-slate-800 opacity-60  p-1 " >{city. smalldescription}</p>
         </div>
+      
+        </div>
+        <div className='flex  justify-content-center'>
+          <button type="button"   onClick={()=>setShowItineraries(!showItineraries)} className=" mt-5 fs-6 btn-flat  fw-bold rounded-xl w-2/12 h-[50] border border-secondary opacity-95 text-white  text-center p-2">
+            <a href= {showItineraries ? ("#itineraries") : ("#")}>
+            {showItineraries ? ("HIDE ITINERARIES") : ("VIEW ITINERARIES")}
+             </a></button>
+          {/* <Anchor to={'/cities'} className=" mt-5 fs-6 btn-flat  fw-bold rounded-xl w-10/12 h-1/12 border border-secondary opacity-75 text-white  text-center p-2" >View Itineraries</Anchor> */}
+          </div>
        
         
    
 
       </div>
+      <button  type="button" onClick={goCities} className=" mt-5 fs-6 btn-flat  fw-bold rounded-xl w-2/12 h-[50] border border-secondary opacity-95 text-white  text-center p-2">BACK TO CITIES</button>
+
       <div className=' flex flex-column justify-content-center text-center'>
-      <p className='display-1  fw-bold '>
-      Features    </p>
+      <p className='display-1  fw-bold ' id='itineraries'>  Features of {city.city}  </p>
+      
       <Detail_of_city/>
-      <p className='display-1  fw-bold'>
-      Itineraries
-      </p>
-      <Itineraries    
-      />
+      {showItineraries && (<>
+      <p className='display-1  fw-bold' >  Itineraries  </p>
+      <Itineraries    />  </>)}
       </div>
+      
 
     </>
 

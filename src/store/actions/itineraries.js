@@ -9,6 +9,7 @@ const read_itineraries = createAsyncThunk(
         try {
             let data = await axios(apiUrl+'/itineraries?city_id='+_id)
             console.log(data);
+            
             return { itineraries: data.data.response }
         } catch (error) {
             console.log(error);
