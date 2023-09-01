@@ -15,7 +15,7 @@ const CardSearchCities = ({text, alt,photo}) => {
 
                 {/* </button> */}
                 {/* <button className=" btn btn-flat btn-bd-primary col-sm-12 col-md-4 col-lg-4 mt-1 " variant="flat" >View More</button> */}
-                <Anchor  to={'/cityDetail/'+alt} className="btn rounded-xl  col-sm-4 col-md-4 col-lg-4 btn-flat flex justify-center items-center mx-1" >View More</Anchor>
+                <Anchor  to={'/cityDetail/'+alt} className="btn-flat w-2/5 rounded-xl  col-sm-4 col-md-4 col-lg-4 flex justify-center items-center mx-1" >View More</Anchor>
       </div>
       {/* <Anchor  to={'/cities'} className="h-[50px] h6 px-2 btn-flat   rounded-xl w-[100px] flex justify-center col-sm-12 col-md-6 col-lg-6 mt-1 items-center mx-1" >View More</Anchor> */}
 

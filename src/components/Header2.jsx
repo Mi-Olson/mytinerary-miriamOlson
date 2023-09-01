@@ -36,7 +36,7 @@ export default function Header2() {
                         </div>
 
                         <div className='ms-sm-5 ms-md-5  ms-lg-5 ms-xl-5'>
-                        <img src="../../img/logo.png" width="150" height="50"  class="img-responsive" alt="titulo" />
+                        <img src="../../img/logo.png" width="150" height="50"  className="img-responsive" alt="titulo" />
                             {/* <button className="h-[50px] w-[110px] text-dark ms-sm-20 " type="button">MyTinerary </button> */}
                         </div>
                     </div>

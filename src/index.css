@@ -5,7 +5,12 @@
 
 :root {
     --purple: #8b5cf6;
+    --bs-gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-btn-focus-shadow-rgb:  rgba(255, 255, 255, 0.15);
+ 
 }
+
 
 .custom-element {
     color: var(--purple);
@@ -16,9 +21,35 @@
 .btn-flat {
     background-color: #7c3aed;
     color: white;
+    opacity: 0.8;
+   
+    
+  
+   
+}
+.btn-flat:hover{
+    background-color: #360092;
+    color: rgb(250, 248, 248);
+    
+  
+   
 }
 
-.btn-bd-primary {
+.shadow{
+    /* box-shadow: 12px 19px 22px 27px rgba(0,0,0,0.43);
+    -webkit-box-shadow: 12px 19px 22px 27px rgba(0,0,0,0.43);
+    -moz-box-shadow: 12px 19px 22px 27px rgba(0,0,0,0.43); */
+    box-shadow: 2px 9px 22px 58px rgba(168,21,237,0.43);
+-webkit-box-shadow: 2px 9px 22px 58px rgba(168,21,237,0.43);
+-moz-box-shadow: 2px 9px 22px 58px rgba(168,21,237,0.43);
+   
+}
+.text-shadow{
+    text-shadow: 4px 4px 2px #7c3aed;
+}
+  
+
+/* .btn-bd-primary {
     --bs-btn-font-weight: 600;
     --bs-btn-color: var(--bs-white);
     --bs-btn-bg: var(--verde);
@@ -29,10 +60,10 @@
 
     --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
     --bs-btn-active-color: var(--bs-btn-hover-color);
-
-
+ 
+    
+    
+   
 }
-thumbnail:hover {
-    background-color: red;
-    opacity: 0.5;
-    }
+
+ */
