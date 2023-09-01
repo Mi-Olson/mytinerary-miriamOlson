@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
-import { Link as Anchor } from 'react-router-dom'
+
 import Itineraries from './Itineraries'
 import Detail_of_city from '../components/Detail_of_city'
 
@@ -11,6 +11,7 @@ const { read_city } = city_actions
 import itinerary_actions from '../store/actions/itineraries'
 const {read_itineraries}=itinerary_actions
 import {useNavigate}  from 'react-router-dom'
+import NotFoundElement from '../components/NotFoundElement'
 
 
 export default function CityDetail() {
@@ -81,9 +82,13 @@ export default function CityDetail() {
       <p className='display-1  fw-bold ' id='itineraries'>  Features of {city.city}  </p>
       
       <Detail_of_city/>
-      {showItineraries && (<>
+      {showItineraries ? (<>
       <p className='display-1  fw-bold' >  Itineraries  </p>
-      <Itineraries    />  </>)}
+      <Itineraries    />  </>):(
+        <div className=' flex flex-column justify-content-center mt-5 mb-5 items-center'>
+        <NotFoundElement search={"Itineraries"}/>
+        </div>
+      )}
       </div>
       
 
