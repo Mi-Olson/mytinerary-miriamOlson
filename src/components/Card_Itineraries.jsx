@@ -3,7 +3,13 @@ import { useState } from 'react'
 const Card_Itineraries = ({ each, all_price }) => {
     const [up, setUp] = useState(false)
     const money = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6mOpqmkCQov1a-kWEjzSEvPY4WAdLws6BOg&usqp=CAU"
-    let countMoney = each.price / 10
+    let countMoney = 0
+    if (each.price <40){  countMoney=1  }
+    else if (each.price <=80){  countMoney=2  } 
+    else if (each.price <=100){  countMoney=3  } 
+    else if (each.price <150){  countMoney=4  } 
+   else  if (each.price >=150){  countMoney=5  } 
+
     let array = []
     while (countMoney > 0) {
         array.push(money)
@@ -12,6 +18,13 @@ const Card_Itineraries = ({ each, all_price }) => {
         console.log(countMoney);
 
     }
+    const duration=Math. ceil(each.duration/60)
+    // const array_of_tag=[] 
+    // console.log(each.tags)
+    // if  (length(each.tags) >0){
+    //     array_of_tag=each.tags
+    // }
+
     return (
         <>
             <div className="card w-6/12 mx-5 p-2 bg-secondary bg-gradient m-2" >
@@ -49,25 +62,28 @@ const Card_Itineraries = ({ each, all_price }) => {
                             </div>
                             <div className='flex flex-column w-3/12  text-center'>
                                 <p>Hasshtags:</p>
-                                <div className='flex -flex-row'>
-                                    {/* {(each.tag).map(el=>(
+                                <div className='flex flex-column'>
+                              
+        
+                                                        
+                                    {each.tags.map((ele)=>(
                                     <p>{ele}</p>
-                                ))} */}
+                                ))}  
                                 </div>
 
                             </div>
                             <div className='flex flex-column w-3/12  text-center'>
                                 <p>Duration:</p>
-                                <p>{(each.duration)} week </p>
+                                <p>{(duration)} {(duration>1)?"Hours":"Hour"} </p>
                             </div>
                             <div className='flex flex-column w-3/12 text-center '>
                                 <div className='text-center'>
                                     <p>Price</p>
                                 </div>
-                                <div className='flex flex-wrap  text-center'>
+                                <div className='flex flex-wrap justify-content-center text-center'>
                                     {
                                         (array).map(ele => (
-                                            <img width="50" height="50" src={ele} alt={"..."} />
+                                            <img width="50" height="50" className="p-1" src={ele} alt={"..."} />
                                         )
 
                                         )

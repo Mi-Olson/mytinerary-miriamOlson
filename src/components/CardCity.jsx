@@ -24,7 +24,7 @@ useEffect(() => {
     <div className="card text-bg-dark col-sm-12 col-md-8 col-lg-4  m-2  ">
       <img src={photo} className="card-img" alt={alt} />
       <div className="card-img-overlay d-flex flex-column justify-content-betweend">
-        <h3 className="card-title text-start fw-bold">{text}</h3>
+        <h3 className="card-title text-start fw-bold text-shadow">{text}</h3>
         <button class=" embed-responsive embed-responsive-1by1  gap-1">
 
                    
