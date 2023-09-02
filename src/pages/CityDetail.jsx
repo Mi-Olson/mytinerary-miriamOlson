@@ -82,12 +82,9 @@ export default function CityDetail() {
       <p className='display-1  fw-bold ' id='itineraries'>  Features of {city.city}  </p>
       
       <Detail_of_city/>
-      {showItineraries ? (<>
+      {showItineraries && (<>
       <p className='display-1  fw-bold' >  Itineraries  </p>
-      <Itineraries    />  </>):(
-        <div className=' flex flex-column justify-content-center mt-5 mb-5 items-center'>
-        <NotFoundElement search={"Itineraries"}/>
-        </div>
+      <Itineraries    />  </>
       )}
       </div>
       

@@ -7,7 +7,7 @@ import { Outlet } from 'react-router-dom'
 
 export default function MainLayout() {
   return (
-    <div className='d-flex flex-column justify-content-between aling-content-between min-vh-100' >
+    <div className='d-flex flex-column justify-content-between aling-content-between min-vh-100 multi_bg_example' >
         <Header2/>
         <Outlet/>
        <Footer/>
