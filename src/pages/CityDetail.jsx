@@ -65,7 +65,7 @@ export default function CityDetail() {
       
         </div>
         <div className='flex  justify-content-center'>
-          <button type="button"   onClick={()=>setShowItineraries(!showItineraries)} className=" mt-5 fs-6 btn-flat  fw-bold rounded-xl w-2/12 h-[50] border border-secondary opacity-95 text-white  text-center p-2">
+          <button type="button"   onClick={()=>setShowItineraries(!showItineraries)} className=" mt-5 fs-6 btn-flat sm:w-4/12 md:w-2/12 fw-bold rounded-xl  h-[50] border border-secondary opacity-95 text-white  text-center p-2">
             <a href= {showItineraries ? ("#itineraries") : ("#")}>
             {showItineraries ? ("HIDE ITINERARIES") : ("VIEW ITINERARIES")}
              </a></button>
@@ -76,7 +76,7 @@ export default function CityDetail() {
    
 
       </div>
-      <button  type="button" onClick={goCities} className=" mt-5 fs-6 btn-flat  fw-bold rounded-xl w-2/12 h-[50] border border-secondary opacity-95 text-white  text-center p-2">BACK TO CITIES</button>
+      <button  type="button" onClick={goCities} className=" mt-5 fs-6 btn-flat  fw-bold rounded-xl sm:w-4/12 md:w-2/12  h-[50] border border-secondary opacity-95 text-white  text-center p-2">BACK TO CITIES</button>
 
       <div className=' flex flex-column justify-content-center text-center'>
       <p className='display-1  fw-bold ' id='itineraries'>  Features of {city.city}  </p>
