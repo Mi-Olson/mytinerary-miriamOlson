@@ -8,9 +8,31 @@
     --bs-gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-btn-focus-shadow-rgb:  rgba(255, 255, 255, 0.15);
- 
-}
+    
+    
+    
+  }
 
+  .multi_bg_example {
+    width: 100%;
+    height:100%;
+    background-image:  url(bubbles.png), linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position:
+      bottom right,
+      left,
+      right;
+    background:
+      -moz-linear-gradient(
+        to right,
+        rgba(30, 75, 115, 1),
+        rgba(255, 255, 255, 0)
+      ),
+      -webkit-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0)),
+      -ms-linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0)),
+      linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
+  }
+  
 
 .custom-element {
     color: var(--purple);
