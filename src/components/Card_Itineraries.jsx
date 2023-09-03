@@ -40,7 +40,7 @@ const Card_Itineraries = ({ each, all_price }) => {
 
     return (
         <>
-            <div className="card w-6/12 mx-5 p-2 bg-secondary bg-gradient m-2" >
+            <div className="card sm:w-12/12 md:w-6/12  mx-5 p-2 bg-secondary bg-gradient m-2" >
                 <img className="card-img-top" src={each.photo} alt={"..."} />
                 <div class="card-body">
                     <h5 class="card-title display-6 ">{each.name}</h5>
