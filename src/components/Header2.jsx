@@ -9,7 +9,7 @@ export default function Header2() {
     const [show, setShow] = useState(false)
     return (
         <>
-            <header className='bg-gray-200'>
+            <header  >
                 <div className="text-dark fs-3 fw-bold d-flex justify-content-between p-2 mx-1 my-6 ">
 
 

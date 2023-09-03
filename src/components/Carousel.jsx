@@ -1,40 +1,16 @@
-import React, { useEffect } from 'react'
-import { useState} from "react";
+
 import CardCity from './CardCity'
 
-
-import Spinners from './Spinners';
 export default function Carousel({data}) {
   
- const [show,setShow]=useState(false)
  
-
- useEffect(
-  () => {
-
-    setTimeout(() => {
-      console.log("este es el primer mensaje");
-      setShow(true)
-    }, 2000);
-    
-
-      
-  },      
-  []      
- 
-)
 
 
   return (
     <>
    
 
-{!show ?(
-        <div className='d-flex  w-100 justify-content-center text-center'>
-        <Spinners></Spinners>
-        </div>
 
-      ):(
       <div id="carouselExampleAutoplaying " className="carousel slide bg-gray-400 rounded" data-bs-ride="carousel">
         <div className="carousel-inner ">
           
@@ -89,7 +65,7 @@ export default function Carousel({data}) {
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
         </button>
-      </div>)}
+      </div>
 
     </>
   )

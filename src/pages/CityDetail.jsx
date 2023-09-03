@@ -41,7 +41,7 @@ export default function CityDetail() {
   return (
     <>
   
-      {/* <div className='card '> */}
+    
       <div className=" h-[100vh] bg-cover bg-center "  style={{
       backgroundImage: `url(${city.photo})`,
       // backgroundImage: `url(${externalImage})`,
