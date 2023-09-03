@@ -1,15 +1,40 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState} from "react";
 import CardCity from './CardCity'
+
+
+import Spinners from './Spinners';
 export default function Carousel({data}) {
   
+ const [show,setShow]=useState(false)
  
 
+ useEffect(
+  () => {
+
+    setTimeout(() => {
+      console.log("este es el primer mensaje");
+      setShow(true)
+    }, 2000);
+    
+
+      
+  },      
+  []      
+ 
+)
 
 
   return (
     <>
+   
 
+{!show ?(
+        <div className='d-flex  w-100 justify-content-center text-center'>
+        <Spinners></Spinners>
+        </div>
+
+      ):(
       <div id="carouselExampleAutoplaying " className="carousel slide bg-gray-400 rounded" data-bs-ride="carousel">
         <div className="carousel-inner ">
           
@@ -54,19 +79,7 @@ export default function Carousel({data}) {
               ))}
             </div>
           </div>
-          {/* <div className="carousel-item">
-            <div className="flex  flex-wrap flex-sm-column flex-md-row  flex-lg-row justify-center mt-1">
-
-              {data.slice(12, 16).map((each, index) => (
-                <CardCity
-                  key={index}
-                  photo={each.photo}
-                  alt={each.id}
-                  text={each.city}
-                />
-              ))}
-            </div>
-          </div> */}
+        
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -76,7 +89,7 @@ export default function Carousel({data}) {
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
         </button>
-      </div>
+      </div>)}
 
     </>
   )
