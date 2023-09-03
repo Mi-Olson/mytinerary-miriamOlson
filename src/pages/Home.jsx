@@ -23,7 +23,7 @@ export default function Home() {
    
     useEffect(
         () => {
-            
+            setShow(false)
             if (carousel.length === 0) {
                 
                 
@@ -31,17 +31,17 @@ export default function Home() {
             }
 
            
-        //    setInterval(() => {
-        //         console.log('This will run every second!');
-        //         setShow(true)
-        //       }, 1000);
+           setInterval(() => {
+                console.log('This will run every second!');
+                setShow(true)
+              }, 3000);
              
               
             //  setTimeout(() => {
                
             //     console.log("este es el primer mensaje");
             //     setShow(true)
-            // }, 1000)
+            // }, 2000)
       
  
         }, []);
@@ -57,12 +57,13 @@ export default function Home() {
                     <CardHome />
                 </div>
                 {!show ? (
-                    <div className='d-flex  w-100 justify-content-center text-center'>
+                    <div className='col-sm-12 col-md-9 col-lg-9 d-flex items-center p-5'>
                     <Spinners/>
                 </div>
                     
 
-                ) : (<div className="col-sm-12 col-md-9 col-lg-9 d-flex items-center ">
+                ) : (
+                <div className="col-sm-12 col-md-9 col-lg-9 d-flex items-center ">
                 <Carousel data={carousel} />
                 </div>
 

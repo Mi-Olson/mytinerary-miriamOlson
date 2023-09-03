@@ -3,7 +3,7 @@ import React from 'react'
 const Spinners = () => {
   return (
     <>
-    <div class="loader">Loading...</div>
+    <div class="loader ">Loading...</div>
     {/* <div className="spinner-border text-primary" role="status">
   <span className="sr-only">Loading...</span>
 </div>
