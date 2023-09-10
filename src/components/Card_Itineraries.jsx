@@ -11,7 +11,7 @@ import Card_Activities from './Card_Activities'
 const Card_Itineraries = ({ each, all_price }) => {
 
     const dispatch = useDispatch()
-  const user= useSelector(store=> store.users.user) 
+  const user= useSelector(store=> store.users.userItineraries) 
   console.log(user);
 
     const [up, setUp] = useState(false)
