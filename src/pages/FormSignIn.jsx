@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Link as Anchor, Navigate, useNavigate } from "react-router-dom";
 import { useDispatch,useSelector } from "react-redux";
 import user_actions from "../store/actions/users";
+import Swal from "sweetalert2";
 const {signin}=user_actions
 // import apiUrl from "../services/apiUrl";
 //import axios from "axios";
@@ -18,10 +19,36 @@ export default function Form() {
       mail: mail_signin.current.value,
       password: password_signin.current.value,
     };
-    dispach(signin({data})),
+    let responseDispach=dispach(signin({data}))
+    .then(res=>{
+      if (res.payload.token){
+ 
+      Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        title: 'Logged in !!',
+        showConfirmButton: false,
+        timer: 1500
+      }),navigate('/home')
     
-    console.log(data);
-    navigate('/home')
+    }
+    else if (res.payload.messages.length >0)
+      
+      {
+        let html=res.payload.messages.map(e=>`<p>${e}</p>`).join("")
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          // text: res.payload.messages,
+          html:html
+        
+        })
+
+      }
+    })
+    .catch (err=> console.log(err));
+    
+    
   }
   let user=useSelector(store=>store)
   console.log(user);

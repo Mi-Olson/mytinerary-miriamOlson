@@ -8,6 +8,7 @@ const initial_state = {
     signin:[],
     token:"",
     user: {},
+    messages:[]
 
    
 }
@@ -30,7 +31,8 @@ const user_reducer = createReducer(
         let new_state = {
             ...state,           //a la copia del estado tengo que "llenarle" la propiedad carousel con los datos que me envía la accion
             user: action.payload.user,
-            token:action.payload.token
+            token:action.payload.token,
+            messages:action.payload.messages
         }
         return new_state        //retorno el nuevo estado para que se actualice la vista
     }
