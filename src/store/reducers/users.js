@@ -1,6 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 import user_actions from "../actions/users";
-const { read_user,signin } = user_actions
+const { read_user,signin, signin_token,signout,update_user } = user_actions
 
 const initial_state = {
     userItineraries:{},
@@ -34,7 +34,7 @@ const user_reducer = createReducer(
         }
         return new_state        //retorno el nuevo estado para que se actualice la vista
     }
-)).addCase(
+).addCase(
     signin_token.fulfilled,
     (state,action)=> {
         let new_state = {
@@ -63,7 +63,7 @@ const user_reducer = createReducer(
         }
         return new_state
     }
-)
+))
 
 
     export default user_reducer
