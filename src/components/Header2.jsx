@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { Link as Anchor } from 'react-router-dom'
 import NavBar from './NavBar'
+
 const links = [
     { value: '/', content: 'Home', id: '1', active: true, backgroundColor: 'red', color: 'white' },
     { value: '/cities', content: 'Cities', id: '2', active: false, backgroundColor: 'white', color: 'black' }
 ]
 export default function Header2() {
     const [show, setShow] = useState(false)
+  
     return (
         <>
             <header  >

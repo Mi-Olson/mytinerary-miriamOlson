@@ -34,6 +34,36 @@ const user_reducer = createReducer(
         }
         return new_state        //retorno el nuevo estado para que se actualice la vista
     }
-))
+)).addCase(
+    signin_token.fulfilled,
+    (state,action)=> {
+        let new_state = {
+            ...state,
+            user: action.payload.user,
+            token: action.payload.token
+        }
+        return new_state
+    }
+).addCase(
+    signout.fulfilled,
+    (state,action)=> {
+        let new_state = {
+            ...state,
+            user: action.payload.user,
+            token: action.payload.token
+        }
+        return new_state
+    }
+).addCase(
+    update_user.fulfilled,
+    (state,action)=> {
+        let new_state = {
+            ...state,
+            user: action.payload.user
+        }
+        return new_state
+    }
+)
+
 
     export default user_reducer
