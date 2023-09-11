@@ -29,7 +29,7 @@ const Card_Activities = ({ activities }) => {
                     </svg></button>
 
             </div>
-            <div className='flex flex-wrap'>
+            <div className='flex flex-wrap  gap-1 justify-center'>
             {
                 up && (
                     activities.map(each=>
