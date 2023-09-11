@@ -8,7 +8,7 @@ const read_itineraries = createAsyncThunk(
     async({_id})=> {//es el que trae algo que tenesmo que buscar, lo podemos desestrcuturar como ahora
         try {
             let data = await axios(apiUrl+'/itineraries?city_id='+_id)
-            console.log(data);
+            
             
             return { itineraries: data.data.response }
         } catch (error) {

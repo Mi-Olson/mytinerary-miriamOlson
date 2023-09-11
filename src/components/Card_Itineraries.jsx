@@ -6,13 +6,17 @@ import user_actions from '../store/actions/users'
 const { read_user } = user_actions
 import Card_Activities from './Card_Activities'
 
+import activities_actions from '../store/actions/activities'
+const {read_activities}=activities_actions
+
 
 
 const Card_Itineraries = ({ each, all_price }) => {
 
     const dispatch = useDispatch()
-  const user= useSelector(store=> store.users.user) 
-  console.log(user);
+  const user= useSelector(store=> store.users.userItineraries) 
+  const activities= useSelector(store=> store.activities.activities) 
+   console.log(activities);
 
     const [up, setUp] = useState(false)
     const money = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6mOpqmkCQov1a-kWEjzSEvPY4WAdLws6BOg&usqp=CAU"
@@ -30,10 +34,13 @@ const Card_Itineraries = ({ each, all_price }) => {
         countMoney -= 1
         }
     const duration=Math. ceil(each.duration/60)
+
     
     useEffect(() => {
    
         dispatch(read_user({user_id:each.city_id.admin_id }))
+        console.log(each._id);
+        dispatch(read_activities({itinerary_id:each._id}))
         
     
       }, [])
@@ -102,7 +109,9 @@ const Card_Itineraries = ({ each, all_price }) => {
 
                         </div>
                     
-                <Card_Activities></Card_Activities>
+                <Card_Activities
+               activities={activities}
+                ></Card_Activities>
 
 
 

@@ -28,20 +28,21 @@ export default function Home() {
                 
                 
                 dispatch(read_carousel())
+                
             }
 
            
-           setInterval(() => {
-                console.log('This will run every second!');
-                setShow(true)
-              }, 3000);
+        //    setInterval(() => {
+        //         console.log('This will run every second!');
+        //         setShow(true)
+        //       }, 3000);
              
               
-            //  setTimeout(() => {
+             setTimeout(() => {
                
-            //     console.log("este es el primer mensaje");
-            //     setShow(true)
-            // }, 2000)
+                console.log("este es el primer mensaje");
+                setShow(true)
+            }, 2000)
       
  
         }, []);
