@@ -3,9 +3,9 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 
-const Card_Activities = ({ activities }) => {
-    const [up, setUp] = useState(false)
-     console.log(activities);
+const Card_Activities = ({ activity }) => {
+    
+     
     // // const [activities,setActivities]=useState([])
    
     // let activities1= useSelector(store=> store.activities.activities)
@@ -20,31 +20,15 @@ const Card_Activities = ({ activities }) => {
     return (
         <>
 
-            <div classNameName='flex flex-row justify-content-end'>
-                <p>view more</p>
-
-                <button onClick={() => setUp(!up)}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d={up ? "M4.5 15.75l7.5-7.5 7.5 7.5" : "M19.5 8.25l-7.5 7.5-7.5-7.5"} />
-                    </svg></button>
-
-            </div>
-            <div className='flex flex-wrap  gap-1 justify-center'>
-            {
-                up && (
-                    activities.map(each=>
+          
                     <div  className="card bg-secondary" style={{width: "18rem"}}>
-                        <img src={each.photo} className="card-img-top" alt="..." />
+                        <img src={activity.photo} className="card-img-top" alt="..." />
                         <div className="card-body">
-                            <p className="card-text">{each.name}</p>
+                            <p className="card-text">{activity.name}</p>
                         </div>
-                    </div>)
+                    </div>
                     
-            )
-            }
-            </div>
-
-
+            
 
 
         </>
