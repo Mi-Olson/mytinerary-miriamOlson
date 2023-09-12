@@ -12,7 +12,7 @@ export default function Header2() {
     return (
         <>
             <header  >
-                <div className="text-dark fs-3 fw-bold d-flex justify-content-between p-2 mx-1 my-6 ">
+                <div className="bg-transparent text-dark fs-3 fw-bold d-flex justify-content-between p-2 mx-1  ">
 
 
                     <div className="nav-item gap-2 flex flex-row">

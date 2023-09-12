@@ -1,24 +1,21 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-
+import Header2 from '../components/Header2'
 const NavLayout = () => {
 
-  const myimage='../img/welcome.jpg'
-  return (
-    <div className="flex justify-center items-center h-[100vh] bg-cover bg-center multi_bg_example" 
-    //  style={{
-    //   backgroundImage: `url(${myimage})`,
-    //   // backgroundImage: `url(${externalImage})`,
-    //   backgroundSize: 'cover',
-    //   backgroundRepeat: 'no-repeat',
-    //   backgroundPosition: 'center',
-    //   // height: '500px',
-    // }}
-    >
   
+  return (
+  <div className='multi_bg_example min-vh-100'>
+    <Header2/>
+    <div className="flex justify-center items-center " 
+    
+    >
+      
     <Outlet/>
     
     </div>
+    </div>
+   
   )
 }
 

@@ -1,50 +1,48 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { useDispatch,useSelector } from 'react-redux'
+import apiUrl from '../services/apiUrl'
+import axios from 'axios'
 
-const Card_Activities = ({ activities }) => {
-    const [up, setUp] = useState(false)
-     console.log(activities);
-    // // const [activities,setActivities]=useState([])
-   
-    // let activities1= useSelector(store=> store.activities.activities)
-    // let activities= activities1.filter((ele)=> {
-    //     console.log( "elemento"+ele.itinerary_id._id);
-    //     console.log("buscado"+itinerary_id);
-    //     ele.itinerary_id._id.toString() === itinerary_id.toString()}) 
+const Card_Activities = ({ itinerary_id }) => {
     
-    // console.log(activities1);
+     
+    const [activities, setActivities] = useState([]);
+//   const [noActivities, setNoActivities] = useState(false);
+
+  useEffect(() => {
+    axios(apiUrl+'activities?itinerary_id=' + itinerary_id)
+      .then((response) => {
+        const activitiesData = response.data.response;
+        if (activitiesData.length === 0) {
+          setActivities([]);
+        } else {
+          setActivities(activitiesData);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      
+      });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
     
 
     return (
         <>
-
-            <div classNameName='flex flex-row justify-content-end'>
-                <p>view more</p>
-
-                <button onClick={() => setUp(!up)}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d={up ? "M4.5 15.75l7.5-7.5 7.5 7.5" : "M19.5 8.25l-7.5 7.5-7.5-7.5"} />
-                    </svg></button>
-
-            </div>
-            <div className='flex flex-wrap  gap-1 justify-center'>
-            {
-                up && (
-                    activities.map(each=>
+   { activities ?
+    (activities.map(activity=>
+          
                     <div  className="card bg-secondary" style={{width: "18rem"}}>
-                        <img src={each.photo} className="card-img-top" alt="..." />
+                        <img src={activity.photo} className="card-img-top" alt="..." />
                         <div className="card-body">
-                            <p className="card-text">{each.name}</p>
+                            <p className="card-text">{activity.name}</p>
                         </div>
-                    </div>)
+                    </div>)):( <p>  ¡Sorry, there are no activities available for this itinerary!</p>)
                     
-            )
-            }
-            </div>
-
-
+                }
+                    
+            
 
 
         </>
