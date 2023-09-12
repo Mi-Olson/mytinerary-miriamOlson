@@ -8,7 +8,7 @@ import Card_Activities from './Card_Activities'
 import apiUrl from '../services/apiUrl'
 import axios from 'axios'
 
-import Spinners from './Spinners'
+
 
 
 
@@ -16,10 +16,9 @@ const Card_Itineraries = ({ each, all_price }) => {
 
     const dispatch = useDispatch()
     const user = useSelector(store => store.users.userItineraries)
-    const [activities, setActivities] = useState([])
+   
 
 
-    const [spinner, setSpinner] = useState(true)
     const [up, setUp] = useState(false)
 
 
@@ -43,22 +42,23 @@ const Card_Itineraries = ({ each, all_price }) => {
         setUp(!up)
         console.log(up);
        
-        if(up){
-            fillActivities()
-        }
+        // if(up){
+        //     fillActivities()
+        // }
        
         
     }
     const duration = Math.ceil(each.duration / 60)
-    const   fillActivities = () => {
+    
+    // function   fillActivities (){
         
-      axios(apiUrl + 'activities?itinerary_id=' + each._id)
-            .then(res =>setActivities(res.data.response)            )
-            .cath(err => {
-                setActivities([])
-                console.log(err)
-            })
-    }
+    //   axios(apiUrl + 'activities?itinerary_id=' + each._id)
+    //         .then(res =>setActivities(res.data.response)            )
+    //         .catch(err => {
+    //             setActivities([])
+    //             console.log(err)
+    //         })
+    // }
 
     useEffect(() => {
 
@@ -144,16 +144,12 @@ const Card_Itineraries = ({ each, all_price }) => {
                 </div>
                 <div className='flex flex-wrap  gap-1 justify-center'>
                     {
-                        up && (
-                                
-                            spinner &&( <Spinners></Spinners>),
-                            activities.map(each =>
-                                <Card_Activities
-                                // key={index}
-                                    activity={each}
-                                ></Card_Activities>
-
-                            ))}
+                        up && (  
+                            <Card_Activities 
+                            itinerary_id={each._id}
+                            />                           
+                            
+                            )}
 
                 </div>
             </div>

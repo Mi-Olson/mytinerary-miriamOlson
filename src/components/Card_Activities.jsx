@@ -1,32 +1,46 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { useDispatch,useSelector } from 'react-redux'
+import apiUrl from '../services/apiUrl'
+import axios from 'axios'
 
-const Card_Activities = ({ activity }) => {
+const Card_Activities = ({ itinerary_id }) => {
     
      
-    // // const [activities,setActivities]=useState([])
-   
-    // let activities1= useSelector(store=> store.activities.activities)
-    // let activities= activities1.filter((ele)=> {
-    //     console.log( "elemento"+ele.itinerary_id._id);
-    //     console.log("buscado"+itinerary_id);
-    //     ele.itinerary_id._id.toString() === itinerary_id.toString()}) 
-    
-    // console.log(activities1);
+    const [activities, setActivities] = useState([]);
+//   const [noActivities, setNoActivities] = useState(false);
+
+  useEffect(() => {
+    axios(apiUrl+'activities?itinerary_id=' + itinerary_id)
+      .then((response) => {
+        const activitiesData = response.data.response;
+        if (activitiesData.length === 0) {
+          setActivities([]);
+        } else {
+          setActivities(activitiesData);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      
+      });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
     
 
     return (
         <>
-
+   { activities ?
+    (activities.map(activity=>
           
                     <div  className="card bg-secondary" style={{width: "18rem"}}>
                         <img src={activity.photo} className="card-img-top" alt="..." />
                         <div className="card-body">
                             <p className="card-text">{activity.name}</p>
                         </div>
-                    </div>
+                    </div>)):( <p>  ¡Sorry, there are no activities available for this itinerary!</p>)
+                    
+                }
                     
             
 

@@ -17,7 +17,7 @@ const LoginButton = () => {
   //       setLogin(true)
   //     }
  const islogin = () => { 
-   console.log("haymail?",name);
+   
  if (name){
    setLogin(true)
 
