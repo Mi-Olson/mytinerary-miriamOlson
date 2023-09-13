@@ -116,7 +116,7 @@ export default function Form() {
     </div>
     <div className="col-sm-6 px-0 d-none d-sm-block">
       <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
-        alt="Login image" className="w-100 vh-100" />
+        alt="Login image" className="w-80 vh-80" />
     </div>
   </div>
 </div>

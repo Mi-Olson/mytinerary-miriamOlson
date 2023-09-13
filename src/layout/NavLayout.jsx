@@ -5,7 +5,7 @@ const NavLayout = () => {
 
   
   return (
-  <div className='multi_bg_example min-vh-100'>
+  <div className='multi_bg_example min-vh-100 '>
     <Header2/>
     <div className="flex justify-center items-center " 
     
