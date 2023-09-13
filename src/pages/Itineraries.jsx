@@ -14,7 +14,8 @@ const Itineraries = () => {
   
   return (
     <>
-      <div className='flex flex-wrap w-12/12 justify-content-center text-center'>
+      {/* <div className='flex flex-wrap w-12/12 justify-content-center text-center'> */}
+      <div className='flex flex-wrap gap-1 justify-content-evenly  '>
    {((itineraries.length) > 0)? (<>
       {itineraries.map((each, key) => (
         <Card_Itineraries
