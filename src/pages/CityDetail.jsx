@@ -76,9 +76,11 @@ export default function CityDetail() {
    
 
       </div>
-      <button  type="button" onClick={goCities} className=" mt-5 fs-6 btn-flat  fw-bold rounded-xl sm:w-4/12 md:w-2/12  h-[50] border border-secondary opacity-95 text-white  text-center p-2">BACK TO CITIES</button>
-
+      <button  type="button" onClick={goCities} className=" m-2 fs-6 btn-flat  fw-bold rounded-xl sm:w-4/12 md:w-2/12  h-[50] border border-secondary opacity-95 text-white  text-center p-2">BACK TO CITIES</button>
+    
       <div className=' flex flex-column justify-content-center text-center'>
+      <div className='multi_bg_example'>
+      
       <p className='display-5  fw-bold ' id='itineraries'>  Features of {city.city}  </p>
       
       <Detail_of_city/>
@@ -87,6 +89,9 @@ export default function CityDetail() {
       <Itineraries    />  </>
       )}
       </div>
+
+
+      </div> 
       
 
     </>
