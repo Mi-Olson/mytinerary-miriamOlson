@@ -26,7 +26,7 @@ const LoginButton = () => {
    
     //  setLogin(!login)
     if (login){
-      dispach(signout)
+      dispach(signout())
       Swal.fire({
         icon: "success",
         title: "Logged out!",
