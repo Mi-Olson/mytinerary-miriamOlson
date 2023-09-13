@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import user_actions from '../store/actions/users'
 import { useEffect } from 'react'
+import Swal from "sweetalert2";
 const {signout}=user_actions
 
 
@@ -13,9 +14,7 @@ const LoginButton = () => {
   const dispach=useDispatch();
   let photo=useSelector(store=>store.users.user?.photo)
   let name=useSelector(store=>store.users.user?.name)
-  // if (name){
-  //       setLogin(true)
-  //     }
+ 
  const islogin = () => { 
    
  if (name){
@@ -28,6 +27,10 @@ const LoginButton = () => {
     //  setLogin(!login)
     if (login){
       dispach(signout)
+      Swal.fire({
+        icon: "success",
+        title: "Logged out!",
+      });
       setLogin(false)
      
     }  else{
@@ -47,10 +50,10 @@ const LoginButton = () => {
     <>
     {login ?(
     <button onClick={handleLog} className="  fs-4  btn-flat d-flex align-items-center h-[50px]  rounded-xl w-md-75 w-sm-100 text-white p-2 text-center gap-1  bg-gradient opacity-75" >
-    <div className='flex flex-column w-2/12 m-3 p-1 text-center justify-content-center items-center '>
+    <div className='flex flex-column w-3/12 m-3 p-1 text-center justify-content-center items-center '>
                                 
                                 <img width="50" height="50" className="  rounded-circle  " src={photo} alt={"..."} />
-                                <p className=' fs-6'>{name}</p>
+                                {/* <p className=' fs-6'>{name}</p> */}
                                 
                             </div>
                             Logout
