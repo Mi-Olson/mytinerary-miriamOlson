@@ -3,7 +3,7 @@ import { Link as Anchor, Navigate, useNavigate } from "react-router-dom";
 import { useDispatch,useSelector } from "react-redux";
 import user_actions from "../store/actions/users";
 import Swal from "sweetalert2";
-const {signin}=user_actions
+const {signin,signin_token}=user_actions
 // import apiUrl from "../services/apiUrl";
 //import axios from "axios";
 
@@ -22,7 +22,7 @@ export default function Form() {
     let responseDispach=dispach(signin({data}))
     .then(res=>{
       if (res.payload.token){
- 
+         dispach(signin_token()),
       Swal.fire({
         position: 'top-center',
         icon: 'success',
