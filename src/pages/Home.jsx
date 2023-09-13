@@ -51,7 +51,7 @@ export default function Home() {
 
 
 
-        <div className="container text-center min-vh-75 justify-content-center align-self-center "  >
+        <div className="container text-center min-vh-90 mb-10 justify-content-center align-self-center "  >
             <Marquee />
             <div className='row '>
                 <div className='col-sm-12 col-md-3 col-lg-3 '>

@@ -38,7 +38,7 @@ const Cities = () => {
       </div>
       
       {((cities.length) >0)?(
-      <div className='flex flex-wrap'>
+      <div className='flex flex-wrap gap-1 justify-content-evenly  '>
       {cities.map((each, index) =>
     
       <CardSearchCities
