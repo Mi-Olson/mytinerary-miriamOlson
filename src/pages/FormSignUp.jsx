@@ -52,7 +52,7 @@ export default function Form() {
 
 
 return (
-  <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+  <div class="d-flex card-img-overlay align-items-center h-custom-2 px-5 justify-center mt-5 pt-5 pt-xl-0 mt-xl-n5">
     <form style={{ width: "23rem" }}
     // className="flex flex-col grow justify-evenly items-center w-4/5"
     >
