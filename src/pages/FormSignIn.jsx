@@ -56,7 +56,7 @@ export default function Form() {
   return (
     
 
-<section className="vh-80">
+<section className="vh-80 card-img-overlay m-10">
 <div className="container-fluid ">
   <div className="row">
     <div className="col-sm-6 text-black">
